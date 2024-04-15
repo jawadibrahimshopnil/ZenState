@@ -5,6 +5,8 @@ import Home from "../pages/Home";
 import Login from './../pages/Login';
 import Register from './../pages/Register';
 import PropertyDetails from './../pages/PropertyDetails';
+import UserProfile from './../pages/UserProfile';
+import UpdateProfile from './../pages/UpdateProfile';
 
 const router = createBrowserRouter([
     {
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
             {
                 path:'/details',
                 element:<PropertyDetails></PropertyDetails>,
+            },
+            {
+                path:'/user-profile',
+                element:<UserProfile></UserProfile>,
+            },
+            {
+                path:'/update-profile',
+                element:<UpdateProfile></UpdateProfile>,
             },
         ]
     }

@@ -2,12 +2,12 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     const navLinks = <>
-        <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/update-profile'>Update Profile</NavLink></li>
-        <li><NavLink to='/user-profile'>User Profile</NavLink></li>
+        <li><NavLink className="text-base font-medium" to='/'>Home</NavLink></li>
+        <li><NavLink className="text-base font-medium" to='/update-profile'>Update Profile</NavLink></li>
+        <li><NavLink className="text-base font-medium" to='/user-profile'>User Profile</NavLink></li>
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-gray-300">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -17,7 +17,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost font-extrabold text-xl">ZenState</a>
+                <a className="btn btn-ghost text-3xl font-extrabold pl-0">ZenState</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

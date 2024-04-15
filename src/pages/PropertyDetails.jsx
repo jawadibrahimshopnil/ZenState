@@ -1,9 +1,10 @@
 const PropertyDetails = () => {
     return (
         <div className="lg:flex flex-row-reverse justify-between lg:px-0 lg:py-0 px-10 py-7 mb-24 rounded-3xl mt-4">
-            <div className="bg-[#1313130D]/[0.05] rounded-2xl lg:w-[48%] max-w-[75%] mx-auto">
+            <div className="bg-[#1313130D]/[0.05] rounded-2xl lg:w-[48%] max-w-[80%] mx-auto">
                 <img src="https://ap.rdcpix.com/8f095a6c773ffa2a8cdd4e720de75de1l-m2556217099od-w1080_h768.webp" className="lg:max-w-full h-full object-cover rounded-lg" />
             </div>
+            
             <div className="flex flex-col lg:mt-0 mt-6 lg:w-[48%]">
                 <div className="grow">
                 <div className="pb-5 mb-5 border-b-2 border-gray-300">

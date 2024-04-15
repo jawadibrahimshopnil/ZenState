@@ -1,8 +1,6 @@
 const UserProfile = () => {
     return (
-        <div>
-            this is UserProfile
-        </div>
+        
     );
 };
 

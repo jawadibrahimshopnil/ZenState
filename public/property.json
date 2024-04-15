@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "estate_title": "Modern City Apartment",
+      "segment_name": "Apartment",
+      "description": "This stylish apartment offers a contemporary urban lifestyle with its open floor plan, high ceilings, and large windows providing ample natural light. Located in the vibrant downtown area, it's surrounded by restaurants, shops, and cultural attractions. Ideal for those seeking convenience and modern living.",
+      "price": "$500K",
+      "status": "sale",
+      "area": "1500 sqft",
+      "location": "Manhattan, New York",
+      "facilities": ["2 bedrooms", "1 bathroom", "Open kitchen", "Balcony with city view"],
+      "image": "https://ap.rdcpix.com/8f095a6c773ffa2a8cdd4e720de75de1l-m2556217099od-w480_h360.webp"
+    },
+    {
+      "id": 2,
+      "estate_title": "Luxury Beach House",
+      "segment_name": "Vacation Rental",
+      "description": "Indulge in the ultimate coastal living experience with this luxurious beach house. Boasting panoramic ocean views, spacious living areas, and high-end finishes throughout, it offers the perfect retreat for relaxation and entertainment. With direct beach access and resort-style amenities, every day feels like a vacation.",
+      "price": "$1.2M",
+      "status": "rent",
+      "area": "3000 sqft",
+      "location": "Malibu, California",
+      "facilities": ["4 bedrooms", "3 bathrooms", "Private pool", "Spacious deck"],
+      "image": "https://ap.rdcpix.com/407ea4ff79b204bd31ef19d88e40f40fl-m2699948514od-w480_h360_x2.webp"
+    },
+    {
+      "id": 3,
+      "estate_title": "Cozy Suburban Home",
+      "segment_name": "Single-family Home",
+      "description": "Escape the hustle and bustle of the city with this charming suburban home. Surrounded by lush greenery and tranquility, it offers a peaceful retreat for families or individuals seeking a slower pace of life. With spacious interiors, a backyard garden, and nearby parks, it's the perfect place to call home.",
+      "price": "$350K",
+      "status": "sale",
+      "area": "2000 sqft",
+      "location": "Bellevue, Washington",
+      "facilities": ["3 bedrooms", "2 bathrooms", "Large backyard", "Garage"],
+      "image": "https://ap.rdcpix.com/561b886673b31609e72e663df283d29al-m2830088036od-w480_h360_x2.webp"
+    },
+    {
+      "id": 4,
+      "estate_title": "Urban Loft Studio",
+      "segment_name": "Apartment",
+      "description": "Experience loft living at its finest with this trendy urban studio. Featuring exposed brick walls, industrial-style fixtures, and an open layout, it's the perfect blend of modern design and historic charm. Located in a vibrant neighborhood with trendy cafes and art galleries, it's ideal for young professionals or creatives.",
+      "price": "$300K",
+      "status": "sale",
+      "area": "1000 sqft",
+      "location": "Brooklyn, New York",
+      "facilities": ["Open living space", "Modern kitchen", "Exposed beams", "Walk-in closet"],
+      "image": "https://ar.rdcpix.com/c40aee1f065a7cdabdf96e4e5c1f9555c-f375313716od-w480_h360.webp"
+    },
+    {
+      "id": 5,
+      "estate_title": "Family-Friendly Townhouse",
+      "segment_name": "Townhouse",
+      "description": "This spacious townhouse is perfect for families looking for room to grow. With multiple levels, ample living space, and a private backyard, there's plenty of room for everyone. Located in a family-friendly neighborhood with parks, schools, and community events, it's an ideal place to raise children.",
+      "price": "$450K",
+      "status": "sale",
+      "area": "2500 sqft",
+      "location": "Alexandria, Virginia",
+      "facilities": ["4 bedrooms", "3.5 bathrooms", "Finished basement", "Deck"],
+      "image": "https://ar.rdcpix.com/11e57a0bf3500a304e288872eb08e8e7c-f2467514797od-w480_h360.webp"
+    },
+    {
+      "id": 6,
+      "estate_title": "Senior Living Community",
+      "segment_name": "Senior Living",
+      "description": "Experience the best in senior living with this vibrant community. Designed for active seniors, it offers a range of amenities and activities to support a healthy and fulfilling lifestyle. With spacious apartments, beautiful gardens, and on-site dining options, it's the perfect place to enjoy retirement.",
+      "price": "$200K",
+      "status": "sale",
+      "area": "1200 sqft",
+      "location": "Scottsdale, Arizona",
+      "facilities": ["1 bedroom", "1 bathroom", "Fitness center", "Community events"],
+      "image": "https://ap.rdcpix.com/c112dac8d9a2ee8b8132f13e3f312acfl-m412048566od-w480_h360_x2.webp"
+    }
+  ]
+  

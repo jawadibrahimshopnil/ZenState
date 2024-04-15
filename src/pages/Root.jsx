@@ -1,8 +1,14 @@
+import { Outlet } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
 const Root = () => {
     return (
-        <div>
-            <h1 className="font-roboto">poppin font</h1>
-        </div>
+        <>
+            <Navbar></Navbar>
+            <Outlet></Outlet>
+            <Footer></Footer>
+        </>
     );
 };
 

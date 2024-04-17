@@ -51,7 +51,7 @@ const PropertyDetails = () => {
                             setFavProps([...favProps, id]);
                             toast.success("Added to Favorite");
                             console.log(favProps)
-                        }} className="bg-blue-500 text-white px-7 inline-block py-4 border-2 rounded-lg font-semibold mr-4">Bookmark</button>
+                        }} className="bg-blue-500 text-white px-7 inline-block py-4 border-2 rounded-lg font-semibold mr-4">Add to Favorite</button>
                     </div>
                 </div>
 

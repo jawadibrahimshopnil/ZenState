@@ -39,7 +39,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 {
-                    user && <div className="avatar tooltip tooltip-bottom" data-tip="User name">
+                    user && <div className="avatar tooltip tooltip-bottom" data-tip={user.displayName}>
                         <div className="w-12 mr-1 rounded-full">
                             <img src={user.photoURL} />
                         </div>

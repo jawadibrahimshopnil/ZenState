@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
+import { AuthContext } from "../router/AuthProvider";
 
 const UserProfile = () => {
+    const {user} = useContext(AuthContext);
     return (
         <div className=" my-8 p-8 sm:flex sm:space-x-6 dark:bg-gray-50 dark:text-gray-800 shadow-md rounded-xl w-full border-2">
             <Helmet>
@@ -12,14 +15,14 @@ const UserProfile = () => {
                         <img src="https://source.unsplash.com/150x150/?portrait?3" alt="" className="mx-auto dark:bg-gray-500" />
                     </div>
                     <div>
-                        <h2 className="text-2xl font-semibold">Leroy Jenkins</h2>
+                        <h2 className="text-2xl font-semibold">{user.displayName}</h2>
                         <span className="text-sm dark:text-gray-600">General manager</span>
                     </div>
                 </div>
 
                 <div className="space-y-1 md:px-8">
                     <p className="">
-                        Hi there! I&apos;m [Your Name], a passionate and creative individual with a love for technology and problem-solving. I thrive on challenges and enjoy delving into new projects that push my limits. I bring a unique perspective to every task I undertake. Outside of work, you&apos;ll often find me in my mission, exploring new places, or spending time with loved ones. Let&apos;s connect and embark on an exciting journey together!
+                        Hi there! I&apos;m {user.displayName}, a passionate and creative individual with a love for technology and problem-solving. I thrive on challenges and enjoy delving into new projects that push my limits. I bring a unique perspective to every task I undertake. Outside of work, you&apos;ll often find me in my mission, exploring new places, or spending time with loved ones. Let&apos;s connect and embark on an exciting journey together!
                     </p>
                     <div className="">
                         <p className="flex items-center space-x-2">

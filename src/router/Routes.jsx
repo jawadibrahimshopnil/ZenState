@@ -31,16 +31,16 @@ const router = createBrowserRouter([
             },
             {
                 path:'/property/:propertyid',
-                element:<PropertyDetails></PropertyDetails>,
+                element:<PrivateRouter><PropertyDetails></PropertyDetails></PrivateRouter>,
                 loader: ()=>fetch("/property.json"),
             },
             {
                 path:'/user-profile',
-                element:<UserProfile></UserProfile>,
+                element:<PrivateRouter><UserProfile></UserProfile></PrivateRouter>,
             },
             {
                 path:'/update-profile',
-                element:<UpdateProfile></UpdateProfile>,
+                element:<PrivateRouter><UpdateProfile></UpdateProfile></PrivateRouter>,
             },
             {
                 path:'/favorite',

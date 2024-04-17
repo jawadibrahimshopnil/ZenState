@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-base-200 text-base-content">
+        <footer className="footer p-10 bg-base-200 text-base-content mb-4 rounded-lg">
             <aside>
                 <h1 className="btn btn-ghost text-3xl font-extrabold pl-0">ZenState</h1>
                 <p>Real EState Industries Ltd.<br />Providing reliable state since 2024</p>

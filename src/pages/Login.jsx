@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../router/AuthProvider";
 import { toast } from "react-toastify";
 
@@ -15,6 +15,8 @@ const Login = () => {
     const { signInUser, setUser } = useContext(AuthContext);
 
     const navigate = useNavigate();
+    const location = useLocation();
+
     const onSubmit = (data) => {
         const { email, password } = data;
 
@@ -22,7 +24,7 @@ const Login = () => {
             .then((res) => {
                 setUser(res.user);
                 toast.success("Login Successful");
-                navigate("/")
+                navigate(location?.state ? location.state : '/')
             })
             .catch(err => console.log(err))
     }
@@ -39,8 +41,7 @@ const Login = () => {
                     <div className="space-y-1">
                         <label htmlFor="password" className="block dark:text-gray-600">Password</label>
                         <input {...register("password", {
-                            required: true,
-                            pattern: /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/
+                            required: true
                         })}
                             aria-invalid={errors.password ? "true" : "false"}
                             type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 border rounded-md border-gray-400" />

@@ -10,7 +10,7 @@ import 'swiper/css/scrollbar';
 
 const Slider = () => {
     return (
-        <div className='my-6'>
+        <div className='my-6 z-0'>
             <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={35}
@@ -18,8 +18,6 @@ const Slider = () => {
                 navigation
                 pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
             >
                 <SwiperSlide><img src='https://ap.rdcpix.com/312f776000e8f4427940b22c77ab4af3l-m418161397od-w1080_h768.webp' /></SwiperSlide>
                 <SwiperSlide><img src='https://ap.rdcpix.com/2a0c0db6c3d3c6118a5da0ad553b8d81l-m3579874056rd-w1080_h768.webp' /></SwiperSlide>

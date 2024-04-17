@@ -21,9 +21,9 @@ const Root = () => {
                         <Outlet></Outlet>
                     </FavPropertyContext.Provider>
                 </PropertyContext.Provider>
-            </div>
-            <Footer></Footer>
             
+            <Footer></Footer>
+            </div>
             <ToastContainer />
         </AuthProvider>
         </>

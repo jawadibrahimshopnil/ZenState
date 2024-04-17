@@ -57,7 +57,9 @@ const Register = () => {
                         <label htmlFor="password" className="block dark:text-gray-600">Password</label>
                         <input {...register("password", {
                             required: true,
-                            pattern: /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/
+                            pattern: {
+                                value: /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/i
+                            }
                         })}
                             aria-invalid={errors.password ? "true" : "false"}
                             type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 border rounded-md border-gray-400" />

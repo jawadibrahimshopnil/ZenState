@@ -1,5 +1,8 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../router/AuthProvider";
+import { toast } from "react-toastify";
 
 const Login = () => {
     const {
@@ -7,10 +10,21 @@ const Login = () => {
         handleSubmit,
         watch,
         formState: { errors },
-    } = useForm()
+    } = useForm();
 
+    const { signInUser, setUser } = useContext(AuthContext);
+
+    const navigate = useNavigate();
     const onSubmit = (data) => {
-        console.log(data)
+        const { email, password } = data;
+
+        signInUser(email, password)
+            .then((res) => {
+                setUser(res.user);
+                toast.success("Login Successful");
+                navigate("/")
+            })
+            .catch(err => console.log(err))
     }
 
     return (
@@ -24,7 +38,13 @@ const Login = () => {
                     </div>
                     <div className="space-y-1">
                         <label htmlFor="password" className="block dark:text-gray-600">Password</label>
-                        <input {...register("password", { required: true })} type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 border rounded-md border-gray-400" />
+                        <input {...register("password", {
+                            required: true,
+                            pattern: /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/
+                        })}
+                            aria-invalid={errors.password ? "true" : "false"}
+                            type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 border rounded-md border-gray-400" />
+                        {errors.password && <p className="text-red-600">The password must have an uppercase, lowercase and atleast 6 character</p>}
                         <div className="flex justify-end text-sm dark:text-gray-600">
                             <a rel="noopener noreferrer" href="#">Forgot Password?</a>
                         </div>

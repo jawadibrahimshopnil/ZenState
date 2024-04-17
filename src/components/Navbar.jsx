@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../router/AuthProvider";
 
 const Navbar = () => {
     const navLinks = <>
@@ -7,6 +9,16 @@ const Navbar = () => {
         <li><NavLink className="text-base font-medium" to='/user-profile'>User Profile</NavLink></li>
         <li><NavLink className="text-base font-medium" to='/favorite'>Favorites</NavLink></li>
     </>
+
+    const { user, logOutUser } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOutUser()
+            .then(() => {
+                console.log('user logout');
+                console.log(user);
+            })
+    }
+
     return (
         <div className="navbar bg-gray-100 rounded-xl mt-4 px-4 md:px-6">
             <div className="navbar-start">
@@ -26,12 +38,19 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <div className="avatar tooltip tooltip-bottom" data-tip="User name">
-                    <div className="w-12 mr-1 rounded-full">
-                        <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                {
+                    user && <div className="avatar tooltip tooltip-bottom" data-tip="User name">
+                        <div className="w-12 mr-1 rounded-full">
+                            <img src={user.photoURL} />
+                        </div>
                     </div>
-                </div>
-                <Link to='/login' className="btn bg-green-500 text-white">Login</Link>
+                }
+                {
+                    user ?
+                        <a onClick={handleLogOut} className="btn bg-green-500 text-white">Logout</a>
+                        :
+                        <Link to='/login' className="btn bg-green-500 text-white">Login</Link>
+                }
             </div>
         </div>
     );

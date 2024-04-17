@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../router/AuthProvider";
 import { toast } from "react-toastify";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
     const {
@@ -12,9 +13,9 @@ const Register = () => {
         formState: { errors },
     } = useForm();
 
-    const {createUser} = useContext(AuthContext);
+    const { createUser} = useContext(AuthContext);
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const onSubmit = (data) => {
         const {name, photoUrl, email, password} = data;
 
@@ -22,6 +23,11 @@ const Register = () => {
         .then(res=>{
             res.user.displayName = name;
             res.user.photoURL = photoUrl;
+
+            updateProfile(res.user, {
+                displayName: name,
+                photoURL: photoUrl,
+            })
 
             toast.success("Register Successful");
             navigate("/")

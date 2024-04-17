@@ -8,6 +8,7 @@ import PropertyDetails from './../pages/PropertyDetails';
 import UserProfile from './../pages/UserProfile';
 import UpdateProfile from './../pages/UpdateProfile';
 import FavoriteProp from './../pages/FavoriteProp';
+import PrivateRouter from "./PrivateRouter";
 
 const router = createBrowserRouter([
     {
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/favorite',
-                element:<FavoriteProp></FavoriteProp>,
+                element:<PrivateRouter><FavoriteProp></FavoriteProp></PrivateRouter>,
             },
         ]
     }

@@ -7,17 +7,18 @@ import Register from './../pages/Register';
 import PropertyDetails from './../pages/PropertyDetails';
 import UserProfile from './../pages/UserProfile';
 import UpdateProfile from './../pages/UpdateProfile';
+import FavoriteProp from './../pages/FavoriteProp';
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
         errorElement: <ErrorPage></ErrorPage>,
+        loader: ()=>fetch("property.json"),
         children: [
             {
                 path:'/',
                 element:<Home></Home>,
-                loader: ()=>fetch("property.json"),
             },
             {
                 path:'/login',
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
                 element:<Register></Register>,
             },
             {
-                path:'/details',
+                path:'/property/:propertyid',
                 element:<PropertyDetails></PropertyDetails>,
             },
             {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
             {
                 path:'/update-profile',
                 element:<UpdateProfile></UpdateProfile>,
+            },
+            {
+                path:'/favorite',
+                element:<FavoriteProp></FavoriteProp>,
             },
         ]
     }

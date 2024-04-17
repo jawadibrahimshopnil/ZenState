@@ -1,6 +1,11 @@
+import { Helmet } from "react-helmet-async";
+
 const UpdateProfile = () => {
     return (
         <section className="p-6 dark:bg-gray-100 dark:text-gray-900 rounded-lg lg:my-4">
+            <Helmet>
+                <title>ZenState | UpdateProfile</title>
+            </Helmet>
             <h1 className="font-bold text-2xl text-center mb-4">Update User Data</h1>
             <form>
                 <div className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-50">

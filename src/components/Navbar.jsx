@@ -5,9 +5,10 @@ const Navbar = () => {
         <li><NavLink className="text-base font-medium" to='/'>Home</NavLink></li>
         <li><NavLink className="text-base font-medium" to='/update-profile'>Update Profile</NavLink></li>
         <li><NavLink className="text-base font-medium" to='/user-profile'>User Profile</NavLink></li>
+        <li><NavLink className="text-base font-medium" to='/favorite'>Favorites</NavLink></li>
     </>
     return (
-        <div className="navbar bg-gray-300">
+        <div className="navbar bg-gray-100 rounded-xl mt-4 mx-4 px-4 md:px-6">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -17,7 +18,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-3xl font-extrabold pl-0">ZenState</a>
+                <a className="btn btn-ghost text-3xl font-extrabold pl-0 gap-0">Zen<span className="text-green-600">State</span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -30,7 +31,7 @@ const Navbar = () => {
                         <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                     </div>
                 </div>
-                <a className="btn">Login</a>
+                <a className="btn bg-green-500 text-white">Login</a>
             </div>
         </div>
     );

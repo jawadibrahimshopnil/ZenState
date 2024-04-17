@@ -1,18 +1,19 @@
-import { useLoaderData } from "react-router-dom";
-import Slider from "../components/Slider";
+// import Slider from "../components/Slider";
 import EstateSection from "../components/EstateSection";
-import { createContext } from "react";
 
-export const PropertyContext = createContext(null);
+import { Helmet } from 'react-helmet-async';
+
+
 
 const Home = () => {
-    const properties = useLoaderData();
+    
     return (
         <div>
+            <Helmet>
+                <title>ZenState | Home</title>
+            </Helmet>
             {/* <Slider></Slider> */}
-            <PropertyContext.Provider value={properties}>
                 <EstateSection></EstateSection>
-            </PropertyContext.Provider>
         </div>
     );
 };

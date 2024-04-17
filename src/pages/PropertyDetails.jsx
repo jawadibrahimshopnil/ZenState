@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
-import { FavPropertyContext, PropertyContext } from "./Root";
+import { FavPropertyContext } from "./Root";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 // import { MapContainer, Marker, TileLayer } from "react-leaflet";
@@ -9,7 +9,6 @@ const PropertyDetails = () => {
     const { favProps, setFavProps } = useContext(FavPropertyContext);
 
     const selectedPropertyID = useParams().propertyid;
-    // const properties = useContext(PropertyContext);
     const properties = useLoaderData();
     
     console.log(properties)

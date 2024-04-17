@@ -1,6 +1,8 @@
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import { createContext, useEffect, useState } from 'react';
 import app from '../firebase/firebase.config';
+import { GoogleAuthProvider } from 'firebase/auth/cordova';
+import { PropTypes } from 'prop-types';
 
 export const AuthContext = createContext(null);
 
@@ -18,7 +20,13 @@ const AuthProvider = ({children}) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
+    const googleProvider = new GoogleAuthProvider();
+    const signInWithGoogle = () =>{
+        setLoading(true)
+        return signInWithPopup(auth, googleProvider)
+    }
     const logOutUser = () =>{
+        setUser(null)
         setLoading(true);
         return signOut(auth);
     }
@@ -27,7 +35,6 @@ const AuthProvider = ({children}) => {
     useEffect(()=>{
         const unSubscribe = onAuthStateChanged(auth, currentUser=>{
             setUser(currentUser);
-            console.log("current user", currentUser)
             setLoading(false);
         });
         return ()=>{
@@ -42,6 +49,7 @@ const AuthProvider = ({children}) => {
         createUser,
         signInUser,
         logOutUser,
+        signInWithGoogle
     }
     return (
         <AuthContext.Provider value={authInfo}>
@@ -51,3 +59,7 @@ const AuthProvider = ({children}) => {
 };
 
 export default AuthProvider;
+
+AuthProvider.propTypes = {
+    children: PropTypes.node
+  };

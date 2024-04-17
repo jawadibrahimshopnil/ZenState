@@ -12,7 +12,7 @@ const UserProfile = () => {
             <div className="mx-auto space-y-4">
                 <div className="grid place-items-center ">
                     <div className="grid place-items-center max-w-xs p-4 shadow-md rounded-xl dark:bg-gray-50 dark:text-gray-800">
-                        <img src="https://source.unsplash.com/150x150/?portrait?3" alt="" className="mx-auto dark:bg-gray-500" />
+                        <img src={user.photoURL} alt="" className="mx-auto dark:bg-gray-500" />
                     </div>
                     <div>
                         <h2 className="text-2xl font-semibold">{user.displayName}</h2>

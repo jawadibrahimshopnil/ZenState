@@ -3,14 +3,19 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../router/AuthProvider";
 
 const Navbar = () => {
+    const { user, logOutUser } = useContext(AuthContext);
+
     const navLinks = <>
         <li><NavLink className="text-base font-medium" to='/'>Home</NavLink></li>
         <li><NavLink className="text-base font-medium" to='/update-profile'>Update Profile</NavLink></li>
-        <li><NavLink className="text-base font-medium" to='/user-profile'>User Profile</NavLink></li>
+        {
+            user && <li><NavLink className="text-base font-medium" to='/user-profile'>User Profile</NavLink></li>
+        }
+        
         <li><NavLink className="text-base font-medium" to='/favorite'>Favorites</NavLink></li>
     </>
 
-    const { user, logOutUser } = useContext(AuthContext);
+    
     const handleLogOut = () => {
         logOutUser()
             .then(() => {

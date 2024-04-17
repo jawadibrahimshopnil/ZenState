@@ -14,7 +14,7 @@ const router = createBrowserRouter([
         path: '/',
         element: <Root></Root>,
         errorElement: <ErrorPage></ErrorPage>,
-        loader: ()=>fetch("property.json"),
+        loader: ()=>fetch("/property.json"),
         children: [
             {
                 path:'/',
@@ -31,6 +31,7 @@ const router = createBrowserRouter([
             {
                 path:'/property/:propertyid',
                 element:<PropertyDetails></PropertyDetails>,
+                loader: ()=>fetch("/property.json"),
             },
             {
                 path:'/user-profile',

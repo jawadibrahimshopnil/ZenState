@@ -1,21 +1,35 @@
+import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+
 const Login = () => {
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+    } = useForm()
+
+    const onSubmit = (data) => {
+        console.log(data)
+    }
+
     return (
         <section className="grid place-items-center m-6">
             <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-50 border">
                 <h1 className="text-2xl font-bold text-center">Login</h1>
-                <form noValidate="" action="" className="space-y-6">
+                <form onSubmit={handleSubmit(onSubmit)} noValidate="" action="" className="space-y-6">
                     <div className="space-y-1">
                         <label htmlFor="email" className="block dark:text-gray-600">Email</label>
-                        <input type="text" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 border rounded-md border-gray-400" />
+                        <input {...register("email", { required: true })} type="email" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 border rounded-md border-gray-400" />
                     </div>
                     <div className="space-y-1">
                         <label htmlFor="password" className="block dark:text-gray-600">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 border rounded-md border-gray-400" />
+                        <input {...register("password", { required: true })} type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 border rounded-md border-gray-400" />
                         <div className="flex justify-end text-sm dark:text-gray-600">
                             <a rel="noopener noreferrer" href="#">Forgot Password?</a>
                         </div>
                     </div>
-                    <button className="block w-full p-3 text-center rounded-md dark:text-gray-50 dark:bg-violet-600">Login in</button>
+                    <button className="block w-full p-3 text-center rounded-md dark:text-gray-50 dark:bg-violet-600">Login</button>
                 </form>
                 <div className="flex items-center pt-4 space-x-1">
                     <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
@@ -37,7 +51,7 @@ const Login = () => {
                     </button>
                 </div>
                 <p className=" text-center sm:px-6 dark:text-gray-600">Don&apos;t have an account?
-                    <a rel="noopener noreferrer" href="#" className="underline text-blue-600"> Register</a>
+                    <Link to='/register' rel="noopener noreferrer" href="#" className="underline text-blue-600"> Register</Link>
                 </p>
             </div>
         </section>

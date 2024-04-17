@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
     const navLinks = <>
@@ -8,7 +8,7 @@ const Navbar = () => {
         <li><NavLink className="text-base font-medium" to='/favorite'>Favorites</NavLink></li>
     </>
     return (
-        <div className="navbar bg-gray-100 rounded-xl mt-4 mx-4 px-4 md:px-6">
+        <div className="navbar bg-gray-100 rounded-xl mt-4 px-4 md:px-6">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -31,7 +31,7 @@ const Navbar = () => {
                         <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                     </div>
                 </div>
-                <a className="btn bg-green-500 text-white">Login</a>
+                <Link to='/login' className="btn bg-green-500 text-white">Login</Link>
             </div>
         </div>
     );

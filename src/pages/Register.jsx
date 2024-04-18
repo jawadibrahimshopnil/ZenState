@@ -5,6 +5,7 @@ import { AuthContext } from "../router/AuthProvider";
 import { toast } from "react-toastify";
 import { updateProfile } from "firebase/auth";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
     const {
@@ -40,6 +41,9 @@ const Register = () => {
 
     return (
         <section className="grid place-items-center m-6">
+            <Helmet>
+                <title>ZenState | Register</title>
+            </Helmet>
             <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-50 border">
                 <h1 className="text-2xl font-bold text-center">Login</h1>
                 <form onSubmit={handleSubmit(onSubmit)} noValidate="" action="" className="space-y-6">

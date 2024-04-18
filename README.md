@@ -2,7 +2,7 @@
 
 Welcome to ZenState, your go-to destination for real estate listings. Whether you're looking for a cozy apartment or a spacious family home, ZenState has got you covered. With its intuitive interface and powerful features, finding your dream property has never been easier.
 
-live site: [ZenState RealState](https://jawad-book-vibe.surge.sh)
+live site: [ZenState RealState](https://realestate-e946d.web.app/)
 
 ## Features
 

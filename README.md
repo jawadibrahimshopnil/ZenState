@@ -11,6 +11,7 @@ live site: [ZenState RealState](https://jawad-book-vibe.surge.sh)
 - **Property Details**: Dive deep into property details, with comprehensive information on amenities, location, and pricing.
 - **Favorite Section**: Save your favorite properties for quick access later.
 - **User Profile Updates**: Easily update your user profile details, including name and photo URL.
+- **Social Login**: Sign in with Google, Facebook, or GitHub for a seamless authentication experience.
 
 ## Packages Used
 

@@ -60,12 +60,12 @@ const Register = () => {
                         <input {...register("password", {
                             required: true,
                             pattern: {
-                                value: /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/i
+                                value: /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/
                             }
                         })}
                             aria-invalid={errors.password ? "true" : "false"}
                             type={showPass ? "text" : "password"} name="password" id="password" placeholder="Password" className="w-full px-4 py-3 border rounded-md border-gray-400" />
-                            <span onClick={()=>setShowPass(!showPass)} className="absolute right-2 top-[40%]">
+                            <span onClick={()=>setShowPass(!showPass)} className="absolute right-2 top-10">
                             {
                                 showPass ? <FaEyeSlash className="w-5 h-5"/>
                                 : <FaEye className="w-5 h-5"/>

@@ -1,9 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../router/AuthProvider";
 import { toast } from "react-toastify";
 import { updateProfile } from "firebase/auth";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
     const {
@@ -11,6 +12,8 @@ const Register = () => {
         handleSubmit,
         formState: { errors },
     } = useForm();
+    
+    const [showPass, setShowPass] = useState(false);
 
     const { createUser} = useContext(AuthContext);
 
@@ -52,7 +55,7 @@ const Register = () => {
                         <label htmlFor="email" className="block dark:text-gray-600">Email</label>
                         <input {...register("email", { required: true })} type="email" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 border rounded-md border-gray-400" />
                     </div>
-                    <div className="space-y-1">
+                    <div className="space-y-1 relative">
                         <label htmlFor="password" className="block dark:text-gray-600">Password</label>
                         <input {...register("password", {
                             required: true,
@@ -61,7 +64,14 @@ const Register = () => {
                             }
                         })}
                             aria-invalid={errors.password ? "true" : "false"}
-                            type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 border rounded-md border-gray-400" />
+                            type={showPass ? "text" : "password"} name="password" id="password" placeholder="Password" className="w-full px-4 py-3 border rounded-md border-gray-400" />
+                            <span onClick={()=>setShowPass(!showPass)} className="absolute right-2 top-[40%]">
+                            {
+                                showPass ? <FaEyeSlash className="w-5 h-5"/>
+                                : <FaEye className="w-5 h-5"/>
+                            }
+                            </span>
+
                         {errors.password && <p className="text-red-600">The password must have an uppercase, lowercase and atleast 6 character</p>}
                         <div className="flex justify-end text-sm dark:text-gray-600">
                             <a rel="noopener noreferrer" href="#">Forgot Password?</a>

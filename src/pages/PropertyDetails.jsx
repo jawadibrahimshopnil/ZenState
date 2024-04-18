@@ -3,21 +3,26 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { FavPropertyContext } from "./Root";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-// import { MapContainer, Marker, TileLayer } from "react-leaflet";
+// import { MapContainer } from 'react-leaflet/MapContainer'
+// import { TileLayer } from 'react-leaflet/TileLayer'
+// import { useMap } from 'react-leaflet/hooks'
+// import { MapContainer, Marker, TileLayer } from 'react-leaflet'
+import 'leaflet/dist/leaflet.css';
 
 const PropertyDetails = () => {
     const { favProps, setFavProps } = useContext(FavPropertyContext);
 
     const selectedPropertyID = useParams().propertyid;
     const properties = useLoaderData();
-    
+
     console.log(properties)
     const selectedProperty = properties.find(property => property.id == selectedPropertyID)
-    const { id, estate_title, description, segment_name, price, area, status, location, facilities, image } = selectedProperty;
+    const { id, estate_title, description, segment_name, price, area, status, location, facilities, image} = selectedProperty;
 
     // const position = [geoLocation.latitude, geoLocation.longitude];
     return (
-        <div className="lg:flex flex-row-reverse gap-6 justify-between lg:px-0 lg:py-0 px-10 py-7 mb-24 rounded-3xl mt-4">
+        <div>
+            <div className="lg:flex flex-row-reverse gap-6 justify-between lg:px-0 lg:py-0 px-10 py-7 mb-24 rounded-3xl mt-4">
                 <div className="bg-[#1313130D]/[0.05] rounded-2xl lg:w-[48%] max-w-[80%] mx-auto">
                     <img src={image} className="lg:max-w-full h-full object-cover rounded-lg" />
                 </div>
@@ -54,8 +59,11 @@ const PropertyDetails = () => {
                     </div>
                 </div>
 
-            {/* <div className="grid place-items-center w-full max-h-96">
-                <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
+
+            </div>
+            {/* <div className="w-full h-96 border border-red-400">
+                <MapContainer center={[48.8566,
+                    2.3522]} zoom={13}>
                     <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -65,6 +73,7 @@ const PropertyDetails = () => {
                 </MapContainer>
             </div> */}
         </div>
+
     );
 };
 

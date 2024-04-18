@@ -1,8 +1,19 @@
-# React + Vite
+# ZenState Real Estate Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to ZenState, your go-to destination for real estate listings. Whether you're looking for a cozy apartment or a spacious family home, ZenState has got you covered. With its intuitive interface and powerful features, finding your dream property has never been easier.
 
-Currently, two official plugins are available:
+live site: [ZenState RealState](https://jawad-book-vibe.surge.sh)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- **Property Listings**: Explore a wide range of real estate properties, including apartments, townhouses, and single-family homes.
+- **Responsive Design**: Enjoy a seamless browsing experience on all devices, from desktops to smartphones.
+- **Property Details**: Dive deep into property details, with comprehensive information on amenities, location, and pricing.
+- **Favorite Section**: Save your favorite properties for quick access later.
+- **User Profile Updates**: Easily update your user profile details, including name and photo URL.
+
+## Packages Used
+
+- React Hook Form in all forms
+- AOS in property cards (Animate on Scroll)
+- Swiper Slider in Home page

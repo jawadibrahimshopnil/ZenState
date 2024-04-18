@@ -22,7 +22,7 @@ const PropertyDetails = () => {
     // const position = [geoLocation.latitude, geoLocation.longitude];
     return (
         <div>
-            <div className="lg:flex flex-row-reverse gap-6 justify-between lg:px-0 lg:py-0 px-10 py-7 mb-24 rounded-3xl mt-4">
+            <div className="lg:flex flex-row-reverse gap-6 justify-between lg:px-0 lg:py-0 px-10 py-7 mb-6 rounded-3xl mt-4">
                 <div className="bg-[#1313130D]/[0.05] rounded-2xl lg:w-[48%] max-w-[80%] mx-auto">
                     <img src={image} className="lg:max-w-full h-full object-cover rounded-lg" />
                 </div>

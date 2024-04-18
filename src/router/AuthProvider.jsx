@@ -1,7 +1,6 @@
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, GoogleAuthProvider, GithubAuthProvider, FacebookAuthProvider } from 'firebase/auth';
 import { createContext, useEffect, useState } from 'react';
 import app from '../firebase/firebase.config';
-import { GoogleAuthProvider } from 'firebase/auth/cordova';
 import { PropTypes } from 'prop-types';
 
 export const AuthContext = createContext(null);
@@ -20,9 +19,22 @@ const AuthProvider = ({children}) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
+
+    const facebookProvider = new FacebookAuthProvider();
+    const signInWithFacebook = () =>{
+        setLoading(true);
+        return signInWithPopup(auth, facebookProvider)
+    }
+
+    const githubProvider = new GithubAuthProvider();
+    const signInWithGithub = () =>{
+        setLoading(true);
+        return signInWithPopup(auth, githubProvider)
+    }
+
     const googleProvider = new GoogleAuthProvider();
     const signInWithGoogle = () =>{
-        setLoading(true)
+        setLoading(true);
         return signInWithPopup(auth, googleProvider)
     }
     const logOutUser = () =>{
@@ -49,7 +61,9 @@ const AuthProvider = ({children}) => {
         createUser,
         signInUser,
         logOutUser,
-        signInWithGoogle
+        signInWithGoogle,
+        signInWithGithub,
+        signInWithFacebook
     }
     return (
         <AuthContext.Provider value={authInfo}>

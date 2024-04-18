@@ -58,9 +58,9 @@ const UpdateProfile = () => {
                         <div className="col-span-full sm:col-span-3">
                             <label htmlFor="email" className="text-lg">Email</label>
                             <input
-                                defaultValue={user.email}
+                                defaultValue={user.email ? user.email : "(not provided)"}
                                 id="email" type="email" placeholder="Email" className="w-full px-4 py-3 border rounded-md border-gray-400" readOnly/>
-                        </div>
+                        </div> {console.log(user)}
                         <div className="col-span-full">
                             <label htmlFor="bio" className="text-lg">Photo</label>
                             <input
